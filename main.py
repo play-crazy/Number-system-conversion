@@ -1,8 +1,6 @@
 
-
 def main():
     print("NUMBER SYSTEM CONVERSION PROGRAM")
-
 
     while True:
         print("1.Decimal to binary")
@@ -10,20 +8,29 @@ def main():
         choice = input("Enter your choice (q to quit):  ")
         match choice:
             case "1":
-                print("Binary: " + base10ToBase2(int(input("Decimal: "))))
+                print("Binary: " + B10toB2(int(input("Decimal: "))))
             case "2":
-                pass
+                print("Decimal: " + str(B2toB10(input("Binary: "))))
             case "q":
                 break
             case _:
                 print("Not a valid option!")
 
-def base10ToBase2(base10):
-    base2 = ''
-    while base10 > 0:
-        base2 = str(base10 % 2) + base2
-        base10 //= 2
-    return base2
+def B10toB2(B10):
+    B2 = ''
+    while B10 > 0:
+        B2 = str(B10 % 2) + B2
+        B10 //= 2
+    return B2
+
+def B2toB10(B2):
+    B10 = 0
+    pow = 0
+    for bit in reversed(B2):
+        B10 += (2 ** pow) * int(bit)
+        pow += 1
+    return B10
+
 
 if __name__ == '__main__':
     main()
