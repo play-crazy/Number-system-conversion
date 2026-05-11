@@ -1,9 +1,10 @@
 
 
+def main():
+    pass
 
-hell
 
 
 
 if __name__ == '__main_-':
-    pass
+    main()
